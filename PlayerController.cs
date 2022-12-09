@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField] Vector2 bouncingSpeed;
-    [SerializeField] LayerMask platformMask;
-
+    //Movement parameters
     public float jumpForce = 6f;
     public float runSpeed = 5f;
-    public float healtPoints;
     public bool canMove = true;
+    
+    //Components
     public Rigidbody2D playerRigid;
     public SpriteRenderer playerRenderer;
-
-    float coyoteTime = 0.2f;
-    float coyoteTimeCounter;
-
-    float jumpBufferTime = 0.2f;
-    float jumpBufferCounter;    
-
-    Vector3 startedPosition;
-
     CapsuleCollider2D playerColider;
     Animator playerAnim;
 
-    public const int INITIAL_HEALT = 100, MAX_HEALT = 200, MIN_HEALT = 10;
+    //Jump methods parameters
+    float coyoteTime = 0.2f;
+    float coyoteTimeCounter;
+    float jumpBufferTime = 0.2f;
+    float jumpBufferCounter;
+    [SerializeField] Vector2 bouncingSpeed;
+    [SerializeField] LayerMask platformMask;
 
+    Vector3 startedPosition;
+    public float healtPoints;
+
+    //Constants
+    public const int INITIAL_HEALT = 100, MAX_HEALT = 200, MIN_HEALT = 10;
     const string ground_State = "IsOnTheGround";
     const string alive_State = "IsAlive";
     const string speed_State = "Speed";
@@ -52,7 +53,9 @@ public class PlayerController : MonoBehaviour {
 
         if(GameManager.sharedInstance.currentGameState == GameState.inGame){
 
+            //Player movement
             if (canMove){
+
 
                 if (IsTouchingTheGrounnd()){
 

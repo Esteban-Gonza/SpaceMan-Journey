@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HealtManager : MonoBehaviour{
 
-    public float life;
     [SerializeField] float noControlTime;
+
+    public float life;
 
     PlayerController player;
     Animator playerAnimator;
