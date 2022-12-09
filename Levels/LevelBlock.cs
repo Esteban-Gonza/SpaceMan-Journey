@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelBlock : MonoBehaviour{
+
+    public Transform startPoint, endPoint;
+
+    void Start(){
+        
+    }
+
+    void Update(){
+        
+    }
+}
